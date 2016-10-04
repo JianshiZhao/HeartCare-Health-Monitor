@@ -36,6 +36,9 @@ Spark streaming divide the incoming data into mini-batches, each contains messag
 <img src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/ss2.png" alt = "Structured Streaming" width = "600">
 
 
+## Structured Streaming Pipeline
+
+
 
 
 
