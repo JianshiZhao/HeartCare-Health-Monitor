@@ -1,6 +1,4 @@
-# HeartCare-Health-Monitor
-
-
+# HeartCare: Health Monitor
 
 ## Project Overview
 Internet of things (IoTs) have been part of our lives nowadays. Lots of health monitor sensors are out there to measure the health charactors of our bodies. Those devices procudce timestamped data at various sampling rate. Effectivly and efficiently using of these data can potentially help people imporve healthcare quality, detect health anormalies, and remote servies. This project is to build a near real-time sensor signal processing platform, to deal with streaming of health sensor data. It has potential application in hospital, nursing home, etc. 
@@ -41,9 +39,10 @@ Spark streaming divide the incoming data into mini-batches, each contains messag
 <img src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/structuredstreamingpipe.png" alt = "Structured Streaming Pipeline" width = "800">
 
 
-
 ## Demo Slides
 Presentation slides about this project is available <a href = "https://docs.google.com/presentation/d/1flMn2waduRLvoU9rn_o9kT73yvg4pUzHyn-i1D9i91s/edit?usp=sharing"> here </a>
 
-Demo Presentation 
-[[First Demo|https://docs.google.com/presentation/d/1flMn2waduRLvoU9rn_o9kT73yvg4pUzHyn-i1D9i91s/edit?usp=sharing]]
+
+
+
+
