@@ -22,7 +22,7 @@ For example:
 
 
 ## Spark Streaming Pipline
-** Ingestion**- 
+- ** Ingestion**
 
 
 <img src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/sparkstreamingpipe.png" alt = "Spark Streaming Pipline" width="800" >
