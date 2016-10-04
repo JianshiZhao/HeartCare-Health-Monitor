@@ -28,8 +28,14 @@ For example:
 Spark streaming divide the incoming data into mini-batches, each contains messages accumulated in a time window. The time window based on the time messages are received, not event time.
 <img src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/sparkstreamingscheme.png" alt = "Spark Streaming" width = "800">
 
+One problem using the system time is that messages may come out of order, which casuses inconsistancy and error in the results. 
+
+
 
 ## Spark Structured Streaming (released on Jul 26 in Spark 2.0.0)
+To overcome these problems, I experimented 
+
+
 
 <img src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/ss2.png" alt = "Structured Streaming" width = "600">
 
