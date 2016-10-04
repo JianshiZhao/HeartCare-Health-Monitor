@@ -36,9 +36,9 @@ Spark streaming divide the incoming data into mini-batches, each contains messag
 To overcome these problems, I experimented 
 
 
-<div style="float: right">
-<img src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/ss2.png" alt = "Structured Streaming" width = "400">
-</div>
+
+<img align = "right" src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/ss2.png" alt = "Structured Streaming" width = "400">
+
 
 ## Structured Streaming Pipeline
 
