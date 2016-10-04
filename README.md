@@ -33,11 +33,14 @@ Spark streaming divide the incoming data into mini-batches, each contains messag
 
 
 ## Spark Structured Streaming (released on Jul 26 in Spark 2.0.0)
-To overcome these problems, I experimented 
+To overcome these problems, I experimented a new high-level API for streaming, Structured Streaming 
+
+
+<img align = "right" src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/ss2.png" alt = "Structured Streaming" width = "500">
 
 
 
-<img align = "right" src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/ss2.png" alt = "Structured Streaming" width = "400">
+
 
 
 ## Structured Streaming Pipeline
