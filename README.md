@@ -25,7 +25,7 @@ For example:
 
 # Spark Streaming Pipline
 
-<img src = "HeartCare-Health-Monitor/images/sparkstreamingpipe.png" alt = "Spark Streaming Pipline" width="500" >
+<img src = "https://github.com/jianshizhao/HeartCare-Health-Monitor/images/sparkstreamingpipe.png" alt = "Spark Streaming Pipline" width="500" >
 
 
 Demo Presentation 
