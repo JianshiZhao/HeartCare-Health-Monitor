@@ -36,14 +36,13 @@ Spark streaming divide the incoming data into mini-batches, each contains messag
 To overcome these problems, I experimented a new high-level API for streaming, Structured Streaming, added in Spark 2.0.0 (released on Jul 26 2016). Structured Streaming treats all arrived data as a unbounded input table. A new message is treated as a new row in the table. Streaming computation is like standard batch-like query on a static table and Spark runs it as an incremental query on the unbounded input table.
 
 
-<img  src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/ss1.png" alt = "Input Table", width = "400"> |<img  src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/ss2.png" alt = "Structured Streaming" width = "400">|
+<img  src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/ss1.png" alt = "Input Table", width = "400"> |<img  src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/ss2.png" alt = "Structured Streaming" width = "400">
 
-
-
-
+The advantages of this streaming model is that it garantees the consistancy of the result from the input table, and take acount of the out-of-order data by runing query over the whole input table. 
 
 
 ## Structured Streaming Pipeline
+The following shows the pipeline for structured streaming. Ideally, we just need to switch the Spark Streaming with Structured Streaming. However, the first version of Structured Streaming supports limited data sources. There is no directed connector to Kafka (which will be added in the future release). Moreover, there is also not a directed way to save output results to Cassandra database. 
 
 <img src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/structuredstreamingpipe.png" alt = "Structured Streaming Pipeline" width = "800">
 
