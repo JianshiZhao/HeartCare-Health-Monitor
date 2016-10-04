@@ -42,7 +42,9 @@ The advantages of this streaming model is that it garantees the consistancy of t
 
 
 ## Structured Streaming Pipeline
-The following shows the pipeline for structured streaming. Ideally, we just need to switch the Spark Streaming with Structured Streaming. However, the first version of Structured Streaming supports limited data sources. There is no directed connector to Kafka (which will be added in the future release). Moreover, there is also not a directed way to save output results to Cassandra database. 
+The following shows the pipeline for structured streaming. Ideally, we just need to switch the Spark Streaming with Structured Streaming. However, the first version of Structured Streaming supports limited data sources, only file source and socket source. There is no directed connector to Kafka (which will be added in the future release). Moreover, there isn't a direct way to save output results to Cassandra database.   
+
+To walk around these obstacles, messages are grabed by a Kafka consumer and saved to folder on HDFS, which serves as a source folder for Structured Streaming. Then, after processing the data, results are write to a result table in memory, using the memory sink optition. This table can be written into Cassandra after all the data been processed.
 
 <img src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/structuredstreamingpipe.png" alt = "Structured Streaming Pipeline" width = "800">
 
