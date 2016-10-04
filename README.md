@@ -22,8 +22,10 @@ For example:
 
 
 ## Spark Streaming Pipline
-- __Ingestion__
-
+- __Ingestion__ :  Messages are ingested by Kafka by sending messages though a set kafka producers runing in parallel. 
+- __Streaming__ :  Spark Streaming receive data from Kafka and perform a time windowed average of heart rate for each user.
+- __Database__ : Result are saved to Cassandra, which has strength in store time series data. 
+- __Front-End__ : Processed result are shown in a user interface, based on Flask. 
 
 <img src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/sparkstreamingpipe.png" alt = "Spark Streaming Pipline" width="800" >
 
