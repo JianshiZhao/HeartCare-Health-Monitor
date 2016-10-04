@@ -12,13 +12,7 @@ For example:
 {"hr": 117, "id": "Susan Nathan", "time": "2016-09-23 16:11:09"}
 
 {"hr": 103, "id": "Anthony Laura", "time": "2016-09-21 14:01:25"}
-
-{"hr": 133, "id": "Matthew Maria", "time": "2016-09-23 16:58:55"}
-
-{"hr": 131, "id": "Jason Rachel", "time": "2016-09-22 16:33:45"}
-
-{"hr": 101, "id": "Susan Nathan", "time": "2016-09-20 19:12:57"}
-
+...
 
 
 ## Spark Streaming Pipline
