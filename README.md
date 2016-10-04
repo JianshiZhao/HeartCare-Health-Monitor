@@ -27,7 +27,7 @@ For example:
 
 <img src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/sparkstreamingpipe.png" alt = "Spark Streaming Pipline" width="800" >
 
-
+<img src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/sparkstreamingscheme.png" alt = "Spark Streaming" width = "800">
 
 
 
