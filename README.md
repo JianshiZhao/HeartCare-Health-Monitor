@@ -36,7 +36,7 @@ Spark streaming divide the incoming data into mini-batches, each contains messag
 To overcome these problems, I experimented a new high-level API for streaming, Structured Streaming, added in Spark 2.0.0 (released on Jul 26 2016). Structured Streaming treats all arrived data as a unbounded input table. A new message is treated as a new row in the table. 
 
 
-<img align = "left" src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/ss1.png" alt = "Input Table", width = "400"> <img align = "right" src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/ss2.png" alt = "Structured Streaming" width = "500">
+<img align = "left" src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/ss1.png" alt = "Input Table", width = "300"> <img align = "right" src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/ss2.png" alt = "Structured Streaming" width = "500">
 
 
 
