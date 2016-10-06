@@ -24,7 +24,9 @@ object StructStream {
     val userSchema = new StructType().add("id", "string").add("hr", "integer").add("time","timestamp")
     val jsonDF = spark.readStream.schema(userSchema).json("hdfs://ec2-52-45-70-95.compute-1.amazonaws.com:9000/test3/")
     val line_count = jsonDF.groupBy(window($"time","2 minutes","1 minutes"), $"id").count().orderBy("window")
- 
+
+
+    /* Try to use for each sink to write data to cassandra */
     import org.apache.spark.sql.ForeachWriter
  
     val writer = new ForeachWriter[org.apache.spark.sql.Row] {
@@ -38,7 +40,10 @@ object StructStream {
     }
  
     val query = line_count.writeStream.outputMode("complete").foreach(writer).start()
- 
+
+    /* For this version, the data is written into memory sink*/
+    val query = line_count.writeStream.outputMode("complete").format("memory").queryName("table").start()
+    
     query.awaitTermination()
  
   }
