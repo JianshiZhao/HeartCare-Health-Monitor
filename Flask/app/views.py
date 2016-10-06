@@ -75,7 +75,6 @@ def healmon_search():
     else:
         return jsonify(result={"name":s_name,"check":"Name Not Exists"})
 
-
 @app.route('/search',methods = ['POST'])
 def search_name():
     s_name = request.form["search_name"]
@@ -84,7 +83,6 @@ def search_name():
         return jsonify(result = jsonresponse)
     else:
         return jsonify(result={"name":s_name,"check":"Name Not Exists"})
-
 
 @app.route('/hrini/<usr>')
 def get_hrini(usr):
@@ -96,9 +94,6 @@ def get_hrini(usr):
         response_list.append(val)
     jsonresponse = [{"uid":x.uid,"hr":x.avg,"time":x.time} for x in response_list]
     return jsonify(records = jsonresponse)
-
-
-
 
 @app.route('/hr/<usr>')
 def get_hr(usr):
