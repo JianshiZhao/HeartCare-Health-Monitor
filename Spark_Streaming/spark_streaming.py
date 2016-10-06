@@ -26,15 +26,17 @@ def getSqlContextInstance(sparkContext):
 lines_map = lines.map(lambda x: (x["id"],(int(x["hr"]),1)))
 
 def process(rdd):
-    now_time = datetime.now()
-    sqlContext = getSqlContextInstance(rdd.context)
-    rdd_agg = rdd.reduceByKey(lambda x,y:(x[0]+y[0],x[1]+y[1]))
-    rdd_avg = rdd_agg.map(lambda x:(x[0],round(float(x[1][0])/x[1][1])))
-    rowRdd = rdd_avg.map(lambda x: Row(uid=x[0], time=now_time, avg=x[1]))
-    avgDataFrame = sqlContext.createDataFrame(rowRdd)
+    if not rdd.isEmpty():
+        now_time = datetime.now()
+        sqlContext = getSqlContextInstance(rdd.context)
+        rdd_agg = rdd.reduceByKey(lambda x,y:(x[0]+y[0],x[1]+y[1]))
+        rdd_avg = rdd_agg.map(lambda x:(x[0],round(float(x[1][0])/x[1][1])))
+        rowRdd = rdd_avg.map(lambda x: Row(uid=x[0], time=now_time, avg=x[1]))
+        avgDataFrame = sqlContext.createDataFrame(rowRdd)
     
-    avgDataFrame.write.format("org.apache.spark.sql.cassandra").options(table="sstream",keyspace="playground").save(mode="append")
-    
+        avgDataFrame.write.format("org.apache.spark.sql.cassandra").options(table="sstream",keyspace="playground").save(mode="append")
+    else:
+        pass
     
 lines_map.foreachRDD(process)
 
