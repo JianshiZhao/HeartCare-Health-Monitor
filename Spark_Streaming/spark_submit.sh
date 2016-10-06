@@ -1,1 +1,1 @@
-spark-submit --jars ~/stream-example/spark-streaming-kafka-0-8-assembly_2.11-2.0.0.jar --master spark://ip-172-31-0-174:7077 --packages datastax:spark-cassandra-connector:2.0.0-M2-s_2.11 --conf spark.conssandra.connection.host=172.31.0.174
+spark-submit --jars ~/stream-example/spark-streaming-kafka-0-8-assembly_2.11-2.0.0.jar --master spark://ip-172-31-0-174:7077 --packages datastax:spark-cassandra-connector:2.0.0-M2-s_2.11 --conf spark.conssandra.connection.host=172.31.0.174 spark_streaming.py
