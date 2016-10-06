@@ -12,8 +12,8 @@ from datetime import datetime
 from pyspark.sql import SQLContext, Row
 
 
-ssc=StreamingContext(sc, 20)
-zkQuorum, topic = ['localhost:2181','test3']
+ssc=StreamingContext(sc, 2)
+zkQuorum, topic = ['localhost:2181','sensor']
 kvs = KafkaUtils.createStream(ssc, zkQuorum, "spark-streaming-consumer", {topic: 1})
 lines = kvs.map(lambda x:json.loads(x[1]))
 
@@ -38,5 +38,6 @@ def process(rdd):
     
     
 lines_map.foreachRDD(process)
+
 ssc.start()
 ssc.awaitTermination()
