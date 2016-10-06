@@ -2,7 +2,6 @@ import sys
 from cassandra import ConsistencyLevel
 from cassandra.cluster import Cluster
 from cassandra.query import SimpleStatement
-from __future__ import print_function
 from pyspark import SparkContext
 from pyspark.streaming import StreamingContext
 from pyspark.streaming.kafka import KafkaUtils
@@ -11,7 +10,7 @@ import json
 from datetime import datetime
 from pyspark.sql import SQLContext, Row
 
-
+sc = SparkContext(appName="HealthMonitor")
 ssc=StreamingContext(sc, 2)
 zkQuorum, topic = ['localhost:2181','sensor']
 kvs = KafkaUtils.createStream(ssc, zkQuorum, "spark-streaming-consumer", {topic: 1})
