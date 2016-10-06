@@ -241,7 +241,6 @@ $(function () {
     });
 
 
-
    $('#search').submit(function() { // catch the form's submit event
     $.ajax({ // create an AJAX call...
         data: $(this).serialize(), // get the form data
@@ -336,17 +335,6 @@ $(function () {
         
         $("#show").text(l_value);
     });
-
-
-
-
-
-
-
-
-
-
-
 
             }
             else {$('#search_result').text(response.result.check);}
