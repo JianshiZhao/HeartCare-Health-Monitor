@@ -18,3 +18,7 @@ CREATE TABLE playground.sstream (
     AND min_index_interval = 128
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
+
+
+
+ALTER TABLE sstream WITH default_time_to_live=7200;
