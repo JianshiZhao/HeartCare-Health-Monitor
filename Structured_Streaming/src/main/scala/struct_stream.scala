@@ -22,11 +22,13 @@ object StructStream {
     import spark.implicits._
  
     val userSchema = new StructType().add("id", "string").add("hr", "integer").add("time","timestamp")
+
     val jsonDF = spark.readStream.schema(userSchema).json("hdfs://ec2-52-45-70-95.compute-1.amazonaws.com:9000/test3/")
-    val line_count = jsonDF.groupBy(window($"time","2 minutes","1 minutes"), $"id").count().orderBy("window")
+
+    val line_avg = jsonDF.groupBy(window($"time","2 minutes","1 minutes"), $"id").agg(avg("hr"), max("hr"), min("hr")).orderBy("window")
 
 
-    /* Try to use for each sink to write data to cassandra */
+    /* Try to use for each sink to write data to cassandra, BUT this does not work well */
     import org.apache.spark.sql.ForeachWriter
  
     val writer = new ForeachWriter[org.apache.spark.sql.Row] {
@@ -39,10 +41,10 @@ object StructStream {
       override def close(errorOrNull: Throwable) = ()
     }
  
-    val query = line_count.writeStream.outputMode("complete").foreach(writer).start()
+    val query = line_avg.writeStream.outputMode("complete").foreach(writer).start()
 
     /* For this version, the data is written into memory sink*/
-    val query = line_count.writeStream.outputMode("complete").format("memory").queryName("table").start()
+    val query = line_avg.writeStream.outputMode("complete").format("memory").queryName("result_table").start()
     
     query.awaitTermination()
  
