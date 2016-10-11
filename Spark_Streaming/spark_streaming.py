@@ -42,7 +42,9 @@ def process(rdd):
         # create a dataframe from Rows
         avgDataFrame = sqlContext.createDataFrame(rowRdd)
         # write the dataframe to Cassandra using the connector
-        avgDataFrame.write.format("org.apache.spark.sql.cassandra").options(table="sstream",keyspace="playground").save(mode="append")
+        avgDataFrame.write.format("org.apache.spark.sql.cassandra")\
+            .options(table="sstream",keyspace="playground")\
+            .save(mode="append")
     else:
         pass
 
