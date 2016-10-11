@@ -46,7 +46,12 @@ To walk around these obstacles, messages are grabed by a Kafka consumer and save
 
 <img src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/structuredstreamingpipe.png" alt = "Structured Streaming Pipeline" width = "800">
 
-One main feauture in Structured Streaming is that aggregations over a sliding event-time window is straitforward. Window-based aggregations are very similar to grouped aggregations, where aggregate values are maintained for each window the event-time of a row falls into. This make the average over event time much easier then Spark Streaming. 
+One main feauture in Structured Streaming is that aggregations over a sliding event-time window is straitforward. Window-based aggregations are very similar to grouped aggregations, where aggregate values are maintained for each window the event-time of a row falls into. This make the average over event time much easier then Spark Streaming. A snapshot of the result is show below:
+
+<img src = "https://github.com/JianshiZhao/HeartCare-Health-Monitor/blob/master/images/structuredstreamingresult.png" alt = "Structured Result" width = "400" >
+
+
+
 
 
 ## Demo Presentations
