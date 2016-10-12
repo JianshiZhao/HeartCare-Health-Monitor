@@ -58,4 +58,4 @@ object StructStream {
  
 }
  
-case class Stick(id: String, avg(hr):Int, endt: String, sst: String)
+case class Stick(id: String, avg:Int, endt: String, sst: String)
